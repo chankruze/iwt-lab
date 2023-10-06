@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 60vw;
+    width: 60vws;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+img{
+    height: 450px;
+    width: 800px;
+}
+
+.text{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    color: #fff;
+}
+p{
+    text-align: right;
+    color: #000;
+}

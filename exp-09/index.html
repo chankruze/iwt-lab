@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            align-items: center;
+            display: flex;
+            background-color: #fff;
+            height: 50vw;
+            width: 60vw;
+        }
+        .one{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(40, 224, 162);
+            margin-left: 45vw;
+            margin-right: 1vw;
+            display: block;
+        }
+        .two{
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color:  rgb(40, 224, 162);
+            margin-right: 1vw;
+            display: block;
+        }
+        .three{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color:  rgb(40, 224, 162);
+            display: block;
+        }
+        .one,.two,.three{
+            animation: bounce 1200ms ease infinite;
+
+        }
+        @keyframes bounce {
+            50%{
+                transform: translateY(-50px);
+            }
+            100%{
+                transform: translate(0);
+            }
+        }
+        .container div:nth-child(2){
+            animation-delay: 150ms;
+        }
+        .container div:nth-child(3){
+            animation-delay: 250ms;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.container{
+    align-items: center;
+    display: flex;
+    background-color:#fff;
+    height: 50vw;
+    width: 60vw;
+    justify-content: center;
+}
+span {
+    border-radius: 50%;
+    background-color: rgb(114, 218, 183);
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin: 5px;
+    animation: Sync 0.7s linear 0s infinite normal both running
+}
+@keyframes Sync{
+    50%{
+        transform: scale(0.75);
+        opacity: 0.1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+.container span:nth-child(2){
+    animation-delay: 0.35s;
+}
+
+

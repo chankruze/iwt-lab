@@ -1,0 +1,30 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column ;
+    background-color: #fff;
+}
+div{
+    margin-bottom: 120px;
+}
+@keyframes circle-boom {
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+.circle{
+    display: block;
+    width: 70px;
+    height: 70px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    border-top-color: teal;
+    animation: circle-boom 1000ms ease infinite ;
+}

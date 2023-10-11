@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Card</title>
+    <link rel="stylesheet" href="./styles.css">
+    
+</head>
+<body>
+    <div class="login-card">
+        <h2>Login</h2>
+        <form id="validationForm" method="get">
+            <div class="error-message" id="errorDiv"></div>
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="8">
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById("validationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username.trim() === "") {
+                showError("Username cannot be empty.");
+                return;
+            }
+            if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+                showError("Username can only contain letters, numbers, and underscores.");
+                return;
+            }
+
+            function hashPassword(password) {
+                var hash = 0;
+                if (password.length == 0) return hash;
+                for (var i = 0; i < password.length; i++) {
+                    var char = password.charCodeAt(i);
+                    hash = (hash << 5) - hash + char;
+                }
+                return hash.toString(16);
+            }
+
+            var hashedPassword = hashPassword(password);
+
+            console.log("Username: " + username);
+            console.log("Hashed Password: " + hashedPassword);
+
+            var expirationDate = new Date();
+            expirationDate.setTime(expirationDate.getTime() + (15 * 60 * 1000));
+            document.cookie = "username=" + username + "; expires=" + expirationDate.toUTCString();
+
+            clearError();
+        });
+
+        function showError(message) {
+            const errorDiv = document.getElementById("errorDiv");
+            errorDiv.textContent = message;
+            errorDiv.style.display = "block"; 
+        }
+
+        function clearError() {
+            const errorDiv = document.getElementById("errorDiv");
+            errorDiv.textContent = "";
+            errorDiv.style.display = "none"; 
+        }
+    </script>
+</body>
+</html>

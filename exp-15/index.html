@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note Keeper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="left-section">
+    <div id="add-note-container">
+      <textarea id="new-note" placeholder="Add a new note"></textarea>
+      <button id="add" onclick="addNote()"><b style="letter-spacing: 2px;font-size: 15px;">Add Note</b></button>
+    </div>
+    <h1>Notes</h1>
+    <button id="delete-button" onclick="deleteNote()"><b style="letter-spacing: 2px;font-size: 15px;">Select a Note to Delete</b></button>
+
+    <div id="notes-list"></div>
+  </div>
+  <div id="right-section">
+    <div id="note-content"></div>
+  </div>
+
+  <script>
+    let notes = [];
+
+    if (localStorage.getItem('notes')) {
+      notes = JSON.parse(localStorage.getItem('notes'));
+      displayNotes();
+    }
+
+    function saveNotes() {
+      localStorage.setItem('notes', JSON.stringify(notes));
+    }
+
+    function addNote() {
+      const newNoteText = document.getElementById("new-note").value;
+      if (newNoteText) {
+        const note = {
+          title: "Note " + (notes.length + 1),
+          content: newNoteText,
+          lastEdited: new Date().toLocaleString(),
+        };
+        notes.push(note);
+        saveNotes(); 
+        displayNotes();
+        document.getElementById("new-note").value = "";
+      }
+    }
+
+    function displayNotes() {
+      const notesList = document.getElementById("notes-list");
+      notesList.innerHTML = "";
+      notes.forEach((note, index) => {
+        const card = document.createElement("div");
+        card.className = "note-card";
+        card.addEventListener("click", () => displayNoteContent(index));
+        card.innerHTML = `
+          <div class="note-title">${note.title}</div>
+          <div class="note-details">
+            Max lines: ${note.content.split('\n').length} - Last Edited: ${note.lastEdited}
+          </div>
+        `;
+        notesList.appendChild(card);
+      });
+    }
+
+    function displayNoteContent(index) {
+      const note = notes[index];
+      const noteContent = document.getElementById("note-content");
+      noteContent.textContent = note.content;
+      document.getElementById("delete-button").style.display = "block";
+    }
+
+    function deleteNote() {
+      const noteContent = document.getElementById("note-content").textContent;
+      const index = notes.findIndex((note) => note.content === noteContent);
+      if (index !== -1) {
+        notes.splice(index, 1);
+        saveNotes();
+        displayNotes();
+        clearNoteContent();
+      }
+    }
+
+    function clearNoteContent() {
+      document.getElementById("note-content").textContent = "";
+      document.getElementById("delete-button").style.display = "none";
+    }
+  </script>
+</body>
+</html>

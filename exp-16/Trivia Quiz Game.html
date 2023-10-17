@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Quiz Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 10;
+            background-color: #f4f4f4;
+        }       
+
+        .quiz-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .next-btn {
+            margin-top: 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .next-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Trivia Quiz</h1>
+        <div id="question">Question goes here</div>
+        <div id="options" class="options-container">
+            <button class="option">Option 1</button>
+            <button class="option">Option 2</button>
+            <button class="option">Option 3</button>
+            <button class="option">Option 4</button>
+        </div>
+        <button id="next-btn" class="next-btn">Next</button>
+        <div id="score" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        const question = document.getElementById("question");
+        const options = document.getElementById("options");
+        const nextButton = document.getElementById("next-btn");
+        const scoreContainer = document.getElementById("score");
+
+        const quizData = [
+    {
+        question: "What is the capital of Japan?",
+        options: ["Beijing", "Tokyo", "Seoul", "Bangkok"],
+        answer: "Tokyo"
+    },
+    {
+        question: "Which planet is known as the Red Planet?",
+        options: ["Mars", "Venus", "Earth", "Jupiter"],
+        answer: "Mars"
+    },
+    {
+        question: "In which year did World War I begin?",
+        options: ["1914", "1915", "1916", "1917"],
+        answer: "1914"
+    },
+    {
+        question: "Who painted the Mona Lisa?",
+        options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+        answer: "Leonardo da Vinci"
+    },
+    {
+        question: "What is the largest mammal in the world?",
+        options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+        answer: "Blue Whale"
+    },
+    {
+        question: "Which country is the largest by land area?",
+        options: ["Russia", "Canada", "United States", "China"],
+        answer: "Russia"
+    },
+    {
+        question: "Who is known as the 'Father of Modern Physics'?",
+        options: ["Isaac Newton", "Albert Einstein", "Marie Curie", "Galileo Galilei"],
+        answer: "Albert Einstein"
+    },
+    {
+        question: "Which element does 'O' represent on the periodic table?",
+        options: ["Oxygen", "Gold", "Iron", "Silver"],
+        answer: "Oxygen"
+    },
+    {
+        question: "What is the largest organ in the human body?",
+        options: ["Brain", "Heart", "Liver", "Skin"],
+        answer: "Skin"
+    },
+    {
+        question: "Who wrote 'Romeo and Juliet'?",
+        options: ["William Shakespeare", "Jane Austen", "Charles Dickens", "Mark Twain"],
+        answer: "William Shakespeare"
+    }
+];
+
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function showQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            question.textContent = currentQuestion.question;
+
+            options.innerHTML = "";
+            currentQuestion.options.forEach((option, index) => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.classList.add("option");
+                button.addEventListener("click", () => checkAnswer(option));
+                options.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedOption) {
+            const currentQuestion = quizData[currentQuestionIndex];
+            if (selectedOption === currentQuestion.answer) {
+                score++;
+            }
+
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                showQuestion();
+            } else {
+                showScore();
+            }
+        }
+
+        function showScore() {
+            question.textContent = "Quiz Completed!";
+            options.innerHTML = "";
+            nextButton.style.display = "none";
+            scoreContainer.textContent = `Your Score: ${score}/${quizData.length}`;
+        }
+
+        showQuestion();
+
+        nextButton.addEventListener("click", () => {
+            if (currentQuestionIndex < quizData.length) {
+                showQuestion();
+            } else {
+                showScore();
+            }
+        });
+    </script>
+</body>
+</html>

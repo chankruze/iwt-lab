@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Hammersmith+One&family=Noto+Sans+Chakma&family=Pinyon+Script&family=Poppins:ital,wght@0,300;0,400;0,600;1,100&family=Raleway:wght@200&display=swap"
+        rel="stylesheet">
+    <style>
+        .top {
+            background-image: url(./moutain.jpg);
+            padding: 2%;
+            background-size: cover;
+        }
+
+        .top form input {
+            background: rgba(0, 0, 0, 0);
+            color: antiquewhite;
+            width: 12vw;
+        }
+
+        .navbar-brand {
+            font-size: 2.5vw;
+            font-family: 'Pinyon Script', cursive;
+        }
+
+        .nav-item {
+            font-size: larger;
+            margin-left: 4%;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .title h1 {
+            font-size: 7vw;
+            margin-top: 2%;
+            color: rgba(255, 202, 0, 1);
+            font-family: 'Noto Sans Chakma', sans-serif;
+        }
+
+        .are {
+            color: aliceblue;
+            font-size: 2.5vw;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+        }
+
+        .title button {
+            border-radius: 0%;
+        }
+
+        .p {
+            font-size: 1.2vw;
+            font-weight: 600;
+            background: rgba(255, 202, 0, 1);
+            padding: 0.7vw;
+            mix-blend-mode: screen;
+            font-family: sans-serif;
+        }
+
+        /* second */
+        .news {
+            margin-left: 10vw;
+            height: 50%;
+            width: 80%;
+            background-color: rgb(205, 205, 205);
+            text-align: center;
+        }
+
+        .second h3 {
+            text-align: center;
+            font-family: 'Noto Serif Khojki', serif;
+        }
+
+        #imgc {
+            margin-top: 1.25rem;
+            border-radius: 0%;
+        }
+
+        .card {
+            border-radius: 0%;
+            box-shadow: 8px 12px 2px 1px rgba(140, 140, 141, 0.2);
+        }
+
+        #buttonsec {
+            border-radius: 0%;
+            font-size: 0.89rem;
+            font-weight: 500;
+        }
+
+        /* third */
+        .eco {
+            margin-left: 10vw;
+            height: 50%;
+            width: 80%;
+            background-color: rgb(205, 205, 205);
+        }
+
+        #ecoimg {
+            margin-left: 5vw;
+            margin-bottom: 2vw;
+            border: 2px solid rgba(0, 0, 0, 0.42);
+        }
+
+        .ecot {
+            color: rgb(52, 103, 100);
+            text-align: end;
+        }
+
+        .ecot h1 strong {
+            font-size: 8vw;
+            font-family: 'Noto Serif Khojki', serif;
+        }
+
+        .ecot h1 {
+            font-size: 8vw;
+            font-weight: normal;
+            font-family: 'Noto Serif Khojki', serif;
+        }
+
+        .sideco h3 {
+            text-align: end;
+            color: rgb(88, 88, 88);
+            font-family: 'Noto Serif Khojki', serif;
+        }
+
+        .sideco p {
+            text-align: end;
+            color: rgb(96, 95, 95);
+            font-family: 'Noto Serif Khojki', serif;
+        }
+
+        .sideco button {
+            margin-left: 30vw;
+            border-radius: 0%;
+            font-weight: 600;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        @media screen and (maxj-width:980px) {
+            .ecot {
+                text-align: center;
+            }
+
+            .sideco h3 {
+                text-align: center;
+            }
+
+            .sideco p {
+                text-align: center;
+            }
+        }
+
+        /* forth */
+        .boxx {
+            margin-left: 10vw;
+            height: 40%;
+            width: 80%;
+            background-color: rgba(42, 69, 138, 1);
+            text-align: center;
+        }
+
+        #formm {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .boxx button {
+            color: antiquewhite;
+            background-color: rgba(253, 102, 31, 1);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .boxx button:hover {
+            background-color: rgb(244, 130, 77);
+            color: aliceblue;
+        }
+
+        .boxx input {
+            background-color: antiquewhite;
+            width: 23%;
+            height: 7vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .boxx h1 {
+            color: antiquewhite;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* footer  */
+
+        .flist {
+            list-style: none;
+        }
+
+        .z {
+            padding-left: 0%;
+            margin-top: 5vh;
+        }
+
+        .z li {
+            margin-top: 1vh;
+            font-size: smaller;
+        }
+
+        .footer {
+            background-color: rgb(171, 169, 169);
+            padding: 8vw;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #join {
+            padding: 0.3vw 1vw;
+            border-radius: 34vw;
+            font-size: medium;
+        }
+
+        .lastt {
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><strong>Paramount</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 container-fluid">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" id="sear" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="title">
+            <h1>THE MOUNTAINS</h1>
+            <p class="are">ARE CALLING AND I MUST GO</p>
+            <button type="button" class="btn btn-lg">
+                <p class="p">LEARN MORE</p>
+            </button>
+        </div>
+        <br><br><br><br><br>
+
+    </section><br><br>
+    <section class="second">
+        <div class="news"><br>
+            <h3>Latest News</h3><br>
+            <div class="row">
+                <div class="card col-lg-4 container-fluid" style="width: 18rem;">
+                    <img id="imgc" src="./1200px-Munnar_hillstation_kerala.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+                <div class="card col-lg-4 container-fluid" style="width: 18rem;">
+                    <img id="imgc" src="./himalaya-evening.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+                <div class="card col-lg-4 container-fluid" style="width: 18rem;">
+                    <img id="imgc" src="./shimla-feature-compressed.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+
+            </div><br><br>
+            <button id="buttonsec" type="button" class="btn btn-outline-dark">LEARN MORE</button><br><br>
+        </div>
+    </section><br><br>
+    <section class="third">
+        <div class="eco container-fluid"><br><br>
+            <div class="row">
+                <img src="./ecooo.png" alt="" id="ecoimg" class="col-lg-6" style="width: 21rem;">
+                <div class="sideco col-lg-6">
+                    <div class="ecot">
+                        <h1><strong>Eco</strong> Time</h1>
+                    </div>
+                    <h3>WHAT WE DO AND WHO WE ARE</h3>
+                    <P>When you aire faced with a large wall to fill, it's important to fill it out <br>with furniture
+                        that is proportionate to the scale of the wall so that <br>whatever pieces you have sitting on
+                        or in front of the wall won't be <br>dwarfed by the wall.</P><br><br>
+                    <button type="button" class="btn btn-outline-success">READ MORE</button>
+                </div>
+            </div>
+        </div>
+    </section><br><br>
+    <section class="forth">
+        <div class="boxx container-fluid"><br><br>
+            <h1>Subscribe To Our Newsletter</h1><br>
+            <form action="" class="d-flex flex-row" id="formm">
+                <input class="form-control" id="sear" type="search" placeholder="Enter Your Email Address"
+                    aria-label="Search">
+                <button class="btn btn-lg" type="submit">SUBSCRIBE</button>
+            </form><br><br>
+        </div>
+    </section><br><br>
+    <section class="footer">
+        <div class="row">
+            <div class="zair col-lg-6 container-fluid">
+                <h5><strong>Join Zairza Family</strong></h5><br>
+                <p style="font-size: smaller;">Get exclusive Workshops, sessions, etc.</p>
+                <button type="button" class="btn btn-dark btn-lg" id="join">Join us</button>
+            </div>
+            <div class="footm col-lg-6 container-fluid">
+                <div class="row">
+                    <div class="Zairza col-lg-3 col-md-3 col-sm-3">
+                        <h5><strong>Zairza</strong></h5>
+                        <ul class="z">
+                            <li class="flist"><a class="nav-link" href="#">Login</a></li>
+                            <li class="flist"><a class="nav-link" href="#">Join the Zairza Family</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Member offers</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Workshops & Events</a></li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="Services col-lg-3 col-md-3 col-sm-3">
+                        <h5><strong>Services</strong></h5>
+                        <ul class="z">
+                            <li class="flist"><a class="nav-link" href="#">C++</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Java</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Javascript</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">PHP</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Python</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Android</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">UI Design</a></li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="Help col-lg-3 col-md-3 col-sm-3">
+                        <h5><strong>Help</strong></h5>
+                        <ul class="z">
+                            <li class="flist"><a class="nav-link" href="#">How to join</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Mentors</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Contact us</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">FAQ's</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Core Team</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Feedback</a></li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="About Zairza col-lg-3 col-md-3 col-sm-3">
+                        <h5><strong>About Zairza</strong></h5>
+                        <ul class="z">
+                            <li class="flist"><a class="nav-link" href="#">This is Zairza</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Working at Zairza</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Newsroom</a></li>
+                            </li>
+                            <li class="flist"><a class="nav-link" href="#">Productivity</a></li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="logos">
+            <i class="fa-brands fa-facebook fa-2xl"></i>
+            <i class="fa-brands fa-instagram fa-2xl mx-3"></i>
+            <i class="fa-brands fa-twitter fa-2xl mx-2"></i>
+            <i class="fa-brands fa-youtube fa-2xl mx-3"></i>
+        </div><br>
+        <hr>
+        <div class="lastt">
+            <div class="row container-fluid6">
+                <div class="col-lg-6">
+                    <p>@Zairza 2022</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div id="lasth" class="col-md-3">
+                            <p>Terms & Conditions</p>
+                        </div>
+                        <div id="lasth" class="col-md-3">
+                            <p>Settings</p>
+                        </div>
+                        <div id="lasth" class="col-md-3">
+                            <p>Cookie Policy</p>
+                        </div>
+                        <div id="lasth" class="col-md-3">
+                            <p>Privacy Policy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c310b2aea3.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM SKILL++</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(6, 154, 63);
+      font-family: "Poppins", sans-serif;
+      margin-top: 5vh;
+    }
+
+    .header {
+      text-align: center;
+      color: antiquewhite;
+    }
+
+    .middle {
+      background-color: rgb(41, 40, 40);
+      height: 127vh;
+      width: 20vw;
+      margin-left: 38.5vw;
+      border-radius: 0.8%;
+      color: antiquewhite;
+      padding: 2vw;
+    }
+
+    .padform {
+      margin-top: 10px;
+    }
+
+    #place {
+      height: 4.5vh;
+      width: 20vw;
+      font-family: "Poppins", sans-serif;
+      background-color: rgb(21, 39, 39);
+    }
+
+    #comment {
+      height: 12vh;
+      width: 20vw;
+      background-color: rgb(21, 39, 39);
+      color: antiquewhite;
+    }
+
+    .subm {
+      height: 5.8vh;
+      width: 6vw;
+      border-radius: 8%;
+      border-color: rgb(6, 154, 63);
+      background-color: rgb(6, 154, 63);
+      color: antiquewhite;
+    }
+
+    .drop {
+      color: antiquewhite;
+    }
+
+    .t {
+      color: antiquewhite;
+    }
+  </style>
+  <body>
+    <div class="header">
+      <h1>Skill++ Survey Form</h1>
+      <h4>
+        <i>Thank you for taking the time to help us improve the platform</i>
+      </h4>
+    </div>
+    <br /><br />
+    <div class="middle">
+      <form action="">
+        <label for="name" class="padform"> What is your name? </label
+        ><br /><input
+          type="text"
+          name=""
+          placeholder="Enter Your Name"
+          id="place"
+          class="padform t"
+        /><br /><br />
+        <label for="name" class="padform"> What is your email address? </label
+        ><br /><input
+          type="text"
+          name=""
+          placeholder="Enter Your Email Address"
+          id="place"
+          class="padform t"
+        /><br /><br />
+        <label for="name" class="padform"> What is your age? </label
+        ><br /><input
+          type="text"
+          name=""
+          placeholder="Enter Your Age"
+          id="place"
+          class="padform t"
+        /><br /><br />
+
+        <label for="" class="padform">
+          Which option best describes your current role?? </label
+        ><br />
+        <select name="" id="place" class="padform drop">
+          <option value="">Student</option>
+          <option value="">Teacher</option>
+          <option value="">Employee</option>
+          <option value="">Other</option></select
+        ><br /><br />
+
+        <label for="" class="padform">
+          Would you recommend [Company Name] to a friend? </label
+        ><br />
+        <input type="radio" name="Definitely" id="" class="padform" />
+        <label for="" class="padform">Definitely</label><br />
+        <input type="radio" name="Definitely" id="Maybe" class="padform" />
+        <label for="" class="padform">Maybe</label><br />
+        <input type="radio" name="Definitely" id="Not Sure" class="padform" />
+        <label for="" class="padform">Not Sure</label><br /><br />
+
+        <label for="" class="padform">
+          What would you like to see improved? </label
+        ><br />
+        <label for="" class="padform">(Check all that apply)</label><br />
+        <input type="checkbox" name="" id="" class="padform" /><label for=""
+          >Front-end projects</label
+        ><br />
+        <input type="checkbox" name="" id="" class="padform" /><label for=""
+          >Back-end projects</label
+        ><br />
+        <input type="checkbox" name="" id="" class="padform" /><label for=""
+          >Challenges</label
+        ><br /><br />
+
+        <label for="" class=""> Any comments or suggestions? </label><br />
+        <textarea
+          name=""
+          id="comment"
+          cols="30"
+          rows="10"
+          placeholder="Enter Your Comments Here..."
+          class="padform"
+        ></textarea
+        ><br /><br />
+        <input type="submit" value="Submit" class="subm" />
+      </form>
+    </div>
+  </body>
+</html>

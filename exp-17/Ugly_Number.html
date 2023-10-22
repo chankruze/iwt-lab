@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="return false">
+      <label for="">Enter the number to check for ugly number:</label>
+      <input id="input" type="number" /><br />
+      <button onclick="handleSubmit()" type="submit">Check Ugly Number</button>
+    </form>
+  </body>
+
+  <script>
+    const handleSubmit = () => {
+      const num = document.getElementById("input").value;
+      const isUgly = (num) => {
+        while (num !== 1) {
+          if (num % 2 === 0) {
+            num /= 2;
+          } else if (num % 3 === 0) {
+            num /= 3;
+          } else if (num % 5 === 0) {
+            num /= 5;
+          } else {
+            return false;
+          }
+        }
+        return true;
+      };
+      if (isUgly(num)) {
+        alert(num + " is an Ugly Number");
+      } else {
+        alert(num + " is not an Ugly Number");
+      }
+    };
+  </script>
+</html>
